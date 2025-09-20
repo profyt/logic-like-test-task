@@ -77,7 +77,7 @@ function AppContent() {
                 renderItem={(course) => <CourseItem key={course.item.id} course={course.item} />}
                 keyExtractor={course => course.id}
                 getItemLayout={(data, index) => (
-                  {length: 210, offset: 210 * index, index}
+                  {length: 210, offset: 228 * index, index}
                 )}
                 horizontal 
                 showsHorizontalScrollIndicator={false}
