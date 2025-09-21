@@ -1,5 +1,6 @@
 import { memo, useCallback, useMemo, useState } from "react"
 import { Modal, Pressable, ScrollView, StyleSheet, Text, View } from "react-native"
+import { SafeAreaView } from "react-native-safe-area-context"
 import Chevron from '../assets/icons/chevron.svg'
 import Cross from '../assets/icons/cross.svg'
 import { theme } from "../theme"
@@ -63,19 +64,21 @@ const TagListModal = memo(({onChangeTag, tagList, visible, activeTag, onClose}: 
     )), [tagList, activeTag, onChangeTag])
 
     return (
-        <Modal visible={visible} animationType='slide'>
-            <View style={styles.container}>
-                <Pressable 
-                    style={styles.closeButton}
-                    onPress={onClose}
-                >
-                    <Cross />
-                </Pressable>
-                <Text style={styles.title}>Выбор темы</Text>
-                <ScrollView contentContainerStyle={styles.tagList}>
-                    {TagList}
-                </ScrollView>
-            </View>
+        <Modal visible={visible} animationType='slide' supportedOrientations={['landscape', 'portrait']}>
+            <SafeAreaView>
+                <View style={styles.container}>
+                    <Pressable 
+                        style={styles.closeButton}
+                        onPress={onClose}
+                    >
+                        <Cross />
+                    </Pressable>
+                    <Text style={styles.title}>Выбор темы</Text>
+                    <ScrollView contentContainerStyle={styles.tagList}>
+                        {TagList}
+                    </ScrollView>
+                </View>
+            </SafeAreaView>
         </Modal>
     )
 })
