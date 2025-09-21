@@ -72,7 +72,7 @@ const TagListModal = memo(({onChangeTag, tagList, visible, activeTag, onClose}: 
                     <Cross />
                 </Pressable>
                 <Text style={styles.title}>Выбор темы</Text>
-                <ScrollView>
+                <ScrollView contentContainerStyle={styles.tagList}>
                     {TagList}
                 </ScrollView>
             </View>
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
         color: theme.textColor.primary,
         width: '100%',
         textAlign: 'center',
-        fontFamily: 'Nunito-ExtraBold'
+        fontFamily: theme.fontFamily
     },
     closeButton: {
         position: 'absolute',
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     tagButtonText: {
         fontSize: 18,
         color: theme.button.text.primary,
-        fontFamily: 'Nunito-ExtraBold'
+        fontFamily: theme.fontFamily
     },
     tagButtonActive: {
         backgroundColor: theme.button.activeBg,
@@ -163,6 +163,12 @@ const styles = StyleSheet.create({
     showListButtonText: {
         fontSize: 12,
         color: theme.button.text.active,
-        fontFamily: 'Nunito-ExtraBold'
+        fontFamily: theme.fontFamily
+    },
+    tagList: {
+        paddingBottom: 24,
+        maxWidth: 336,
+        width: '100%',
+        margin: 'auto'
     }
 });

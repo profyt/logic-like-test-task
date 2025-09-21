@@ -6,6 +6,7 @@ export const theme = {
         secondary: '#5A5776',
         inverted: '#ffffff',
     },
+    fontFamily: 'Nunito-ExtraBold',
     button: {
         bg: '#ffffff',
         activeBg: '#5CBB73',

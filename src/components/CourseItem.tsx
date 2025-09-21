@@ -43,6 +43,6 @@ const styles = StyleSheet.create({
         color: theme.textColor.primary,
         textAlign: 'center',
         margin: 'auto',
-        fontFamily: 'Nunito-Black'
+        fontFamily: theme.fontFamily
     }
   });

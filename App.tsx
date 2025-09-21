@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     gap: 18
   },
   error: {
-    fontFamily: 'Nunito-ExtraBold',
+    fontFamily: theme.fontFamily,
     color: theme.textColor.inverted
   }
 });
