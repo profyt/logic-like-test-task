@@ -64,8 +64,13 @@ const TagListModal = memo(({onChangeTag, tagList, visible, activeTag, onClose}: 
     )), [tagList, activeTag, onChangeTag])
 
     return (
-        <Modal visible={visible} animationType='slide' supportedOrientations={['landscape', 'portrait']}>
-            <SafeAreaView>
+        <Modal 
+            visible={visible} 
+            animationType='slide' 
+            supportedOrientations={['landscape', 'portrait']}
+            onRequestClose={onClose}
+        >
+            <SafeAreaView edges={['right', 'bottom', 'left']} style={{paddingBottom: 48}}>
                 <View style={styles.container}>
                     <Pressable 
                         style={styles.closeButton}
